@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@iamtraction/google-translate": "github:iamtraction/google-translate"
+  }
+}

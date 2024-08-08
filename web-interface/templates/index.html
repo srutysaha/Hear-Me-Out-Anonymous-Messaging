@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Hear Me Out</title>
+    <link rel="icon" type="image/x-icon" href="\icon.ico">
+
+    <style>
+        html {
+            font-family: "Quicksand", sans-serif;
+            background: #7F00FF;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E100FF, #7F00FF);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: white;
+            /* font-size: larger; */
+            user-select: none;
+            overflow-x: hidden;
+
+        }
+
+        h1 {
+            font-size: 80px;
+        }
+
+        input[type="file"] {
+            padding: 3% 1%;
+            font-family: "Quicksand", sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            /* background-color: white; */
+
+        }
+
+        label {
+            font-family: "Quicksand", sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        #holdButton {
+            width: 320px;
+            height: 40px;
+            border-radius: 5px;
+            font-family: "Quicksand", sans-serif;
+            font-size: 25px;
+            font-weight: 500;
+            border: none;
+            background-color: #0BDA51;
+            color: white;
+            cursor: pointer;
+            margin: 2%;
+
+        }
+
+        p {
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        h3 {
+            color: black;
+            font-size: 30px;
+        }
+
+        span {
+            color: white;
+        }
+
+        .cb {
+            margin: 0% 10%;
+            text-align: center;
+        }
+
+        textarea {
+            resize: none;
+            font-family: "Quicksand", sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 2%;
+            width: 70%;
+        }
+
+        .features-box {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto 5%;
+
+        }
+
+        .fc {
+            padding: 2%;
+            place-items: center;
+            width: 25vw;
+        }
+        
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        img {
+            height: 100px;
+            margin-left: 30%;
+        }
+        .work{
+            margin-left:10vw;
+        }
+
+        @media screen and (max-width:640px) {
+            h1 {
+                font-size: 53px;
+            }
+
+            p {
+                font-size: 21px;
+            }
+
+            h3 {
+                font-size: 33px;
+            }
+
+            textarea {
+                padding: 4%;
+                width: 85%;
+            }
+
+            .cb {
+                margin: auto 5%;
+            }
+            .features-box{
+                flex-direction:column;
+            }
+            .fc{
+                width:80vw;
+            }
+            #holdButton{
+                width: 240px;
+            }
+
+            label,
+            input[type="file"] {
+                font-size: 12px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cb">
+        <h1>Hear Me Out-Your Opinions Matter!</h1>
+        <p>Hear Me Out is a messaging platform where users can give their feedbacks and share their opinion
+            anonymously.</p>
+        <h3>Share your thoughts about <span>Bengal Institute of Technology</span> below 👇🏻</h3>
+        <br>
+        <form id="myForm" action="/submit" method="post" enctype="multipart/form-data">
+            <textarea id="ta" autofocus required name="ta" rows="5" maxlength="200"
+                placeholder="Share what you feel here..."></textarea>
+            <br>
+            <br>
+            <label for="image">Upload an image here 👉🏻</label>
+            <input type="file" name="image" placeholder="Upload image" accept="image/*"></input>
+            <br>
+            <button type="button" id="holdButton">Hold To Send 🚀<span id="countdown"></span></button>
+        </form>
+        <br>
+    </div>
+    <div id="features">
+        <h2>Key Features</h2>
+        <div class="features-box">
+            <div class="fc"> <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/anonymous-5126680-4276822.png?f=webp&w=512">
+                <h4>✅ Anonymous Feedback Submission:</h4>
+                <ul list-style-type="disc">Share your feedback without revealing your identity.</ul>
+                <ul list-style-type="disc">Write your feedback in any language, including Hinglish, Benglish, and other
+                    multilingual content.</ul>
+            </div>
+            <div class="fc"> <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/category-8817215-7222471.png?f=webp&w=512">
+                <h4>✅ Category-wise Feedback Summary:</h4>
+                <ul list-style-type="disc">Can view feedback summaries categorized by topics.</ul>
+                <ul list-style-type="disc">Get insights into specific areas of concern or praise.</ul>
+            </div>
+            <div class="fc"> <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/statistics-1644866-1397763.png?f=webp&w=512">
+                <h4>✅ Statistics Report:</h4>
+                <ul list-style-type="disc">Generate comprehensive statistics reports to understand feedback trends.</ul>
+                <ul list-style-type="disc">Visual representations of feedback data to help identify key issues and areas
+                    for improvement.</ul>
+            </div>
+            <div class="fc"> <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/image-upload-4826656-4009115.png?f=webp&w=512">
+                <h4>✅ Image Uploads:</h4>
+                <ul list-style-type="disc">Attach images to your feedback to provide additional context.</ul>
+                <ul list-style-type="disc">Images, along with messages and categories, are displayed in the dashboard.
+                </ul>
+            </div>
+            <div class="fc"> <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/dashboard-3213999-2688853.png?f=webp&w=512">
+                <h4>✅ Interactive Dashboard:</h4>
+                <ul list-style-type="disc">Access to a user-friendly dashboard.</ul>
+                <ul list-style-type="disc">View summaries of feedback with options to drill down into specific
+                    categories.</ul>
+            </div>
+            <div class="fc"> <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/scalability-9516666-7724225.png?f=webp&w=512">
+                <h4>✅ Scalability:</h4>
+                <ul list-style-type="disc">'Hear Me Out' is not just for institutions; it's scalable and adaptable for
+                    any place or organization seeking anonymous feedback.</ul>
+                <ul list-style-type="disc">Whether it's a company, community, or public service, our platform can
+                    accommodate diverse feedback needs.</ul>
+            </div>
+        </div>
+
+    </div>
+    <div id="features">
+        <h2>How it Works</h2>
+        <div class="features-box">
+            <div class="fc work"> <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/submit-3218019-2695267.png?f=webp&w=512">
+                <h4>1. Submit Feedback:</h4>
+                <ul >Visit our feedback submission page.</ul>
+                <ul >Drop in your message, thoughts, opinions.</ul>
+                <ul >Optionally, upload an image to support your feedback.</ul>
+                <ul >'Hold to Send' and your feedback will be anonymously sent to the relevant organization.</ul>
+            </div>
+            <div class="fc work"> <img
+                src="https://cdn.iconscout.com/icon/premium/png-512-thumb/view-8662613-6907772.png?f=webp&w=512">
+            <h4>2. View Feedback:</h4>
+            <ul >Organizations can access their dashboard.</ul>
+            <ul >Browse through categorized feedback summaries.</ul>
+            <ul >Analyze feedback trends using the statistics report.</ul>
+        </div>
+
+    </div>
+    <hr>
+    <footer><center>© 2024<a href="https://www.linkedin.com/in/sruty-saha-s16/" target="_blank" style="text-decoration: none; color:white;"> The Smart Crew</a></center></footer>
+
+
+
+
+
+
+    <script>
+        let holdButton = document.getElementById('holdButton');
+        let textarea = document.getElementById('ta');
+        let countdownDisplay = document.getElementById('countdown');
+        let countdownInterval;
+
+        let form = document.getElementById('myForm');
+        let holdTimeout;
+
+        holdButton.addEventListener('mousedown', function (event) {
+            let countdownTime = 5; // Countdown time in seconds
+            countdownDisplay.textContent = countdownTime;
+            holdTimeout = setTimeout(function () {
+                if (textarea.value.trim() === '') {
+                    // Prevent form submission
+                    alert("Text Area Empty! No content to be submitted.");
+                    event.preventDefault();
+
+                    // Show error message
+                }
+                else {
+                    form.submit();
+                }
+            }, countdownTime * 1000); // Set the hold time to 1 second
+            countdownInterval = setInterval(function () {
+                countdownTime--;
+                countdownDisplay.textContent = countdownTime;
+
+                if (countdownTime <= 0) {
+                    clearInterval(countdownInterval);
+                }
+            }, 1000); // Update countdown every second
+
+            holdButton.classList.add('active');
+        }
+        );
+
+        holdButton.addEventListener('mouseup', function () {
+            clearTimeout(holdTimeout);
+            clearInterval(countdownInterval);
+            holdButton.classList.remove('active');
+            countdownDisplay.textContent = '';
+        });
+
+        holdButton.addEventListener('mouseleave', function () {
+            clearTimeout(holdTimeout);
+            clearInterval(countdownInterval);
+            holdButton.classList.remove('active');
+            countdownDisplay.textContent = '';
+        });
+
+    </script>
+
+</body>
+
+</html>
