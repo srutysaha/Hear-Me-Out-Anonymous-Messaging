@@ -121,24 +121,24 @@
 
         @media screen and (max-width:640px) {
             h1 {
-                font-size: 53px;
+                font-size: 8vh;
             }
 
             p {
-                font-size: 21px;
+                font-size: 3vw;
             }
 
             h3 {
-                font-size: 33px;
+                font-size: 5vw;
             }
 
             textarea {
                 padding: 4%;
-                width: 85%;
+                width: 90%;
             }
 
             .cb {
-                margin: auto 5%;
+                margin: auto 3%;
             }
             .features-box{
                 flex-direction:column;
@@ -147,15 +147,22 @@
                 width:80vw;
             }
             #holdButton{
-                width: 240px;
+                width: 70vw;
+                padding:2%;
+                text-align: center;
+                font-size: 2vh;
+                margin: 10% 0%;
             }
-
+                            
+            
             label,
             input[type="file"] {
-                font-size: 12px;
+                font-size:4vw;
+            
             }
-
+            
         }
+
     </style>
 </head>
 
@@ -171,8 +178,8 @@
                 placeholder="Share what you feel here..."></textarea>
             <br>
             <br>
-            <label for="image">Upload an image here 👉🏻</label>
-            <input type="file" name="image" placeholder="Upload image" accept="image/*"></input>
+            <label id="lbl-text" class="image-insertion" for="image">Upload an image here 👉🏻</label>
+            <input type="file" class="image-insertion" name="image" placeholder="Upload image" accept="image/*"></input>
             <br>
             <button type="button" id="holdButton">Hold To Send 🚀<span id="countdown"></span></button>
         </form>
@@ -255,6 +262,10 @@
 
 
     <script>
+        let file_text=document.getElementById('lbl-text');
+        if (window.innerWidth<=640){
+            file_text.innerHTML="Upload an image here 👇🏻"
+        }
         let holdButton = document.getElementById('holdButton');
         let textarea = document.getElementById('ta');
         let countdownDisplay = document.getElementById('countdown');
